@@ -23,6 +23,8 @@ const AboutContainer = styled.div`
   background-position: right;
   background-attachment: fixed;
   text-align: center;
+  margin: auto;
+  padding: 0;
 `
 
 const SecondaryAboutContainer = styled.div`
@@ -206,13 +208,9 @@ export default function About() {
               {CONTESTS.map((contest, index) => {
                 return (
                   <div key={`contest-container-${index}`}>
-                    <PlacementText key={`contest-${index}`}>
-                      {contest.placement}
-                    </PlacementText>
+                    <PlacementText key={`contest-${index}`}>{contest.placement}</PlacementText>
                     {contest.description.map((desc, index) => {
-                      return (
-                        <ListItem key={`description-${index}`}>{desc}</ListItem>
-                      )
+                      return <ListItem key={`description-${index}`}>{desc}</ListItem>
                     })}
                   </div>
                 )
@@ -229,11 +227,7 @@ export default function About() {
             <UnorderedList>
               <ResumeSubHeader>Performances</ResumeSubHeader>
               {PERFORMANCES.map((performance, index) => {
-                return (
-                  <ListItem key={`performance-${index}`}>
-                    {performance}
-                  </ListItem>
-                )
+                return <ListItem key={`performance-${index}`}>{performance}</ListItem>
               })}
             </UnorderedList>
             <UnorderedList>
