@@ -35,14 +35,18 @@ const AboutContainer = styled.div`
 const SecondaryAboutContainer = styled.div`
   display: flex;
   justify-content: center;
+  position: relative;
+  text-align: center;
   height: 100vh;
   background-image: url(/boxes.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  position: relative;
-  text-align: center;
+
+  @media ${media.SMALL_MOBILE} {
+    background-attachment: scroll;
+  }
 `
 
 const DownArrow = styled(Image)`
