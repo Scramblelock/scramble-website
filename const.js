@@ -1,3 +1,5 @@
+export const EMAIL = 'scramblelock@gmail.com'
+
 export const ROUTES = [
   {
     href: '/',
@@ -77,7 +79,7 @@ export const PRIMARY_SOCIAL_ICONS = [
   },
   {
     name: 'Gmail',
-    url: 'mailto:info@scramblelock.com',
+    url: 'mailto:scramblelock@.com',
     logo: '/gmail-black.png',
   },
 ]
@@ -282,9 +284,7 @@ export const BATTLE_GUEST_EVENTS = [
   `Eurobattle 2010 – Porto, Portugal`,
 ]
 
-export const OTHERS = [
-  `Red Bull Beat Riders 2006 – Invited student – New York, USA`,
-]
+export const OTHERS = [`Red Bull Beat Riders 2006 – Invited student – New York, USA`]
 
 export const IMAGES = [
   {

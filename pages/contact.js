@@ -3,7 +3,7 @@ import format from 'date-fns/format'
 import Image from 'next/image'
 import { media } from '../media'
 import { color } from '../color'
-import { PRIMARY_SOCIAL_ICONS, SECONDARY_SOCIAL_ICONS } from '../const'
+import { PRIMARY_SOCIAL_ICONS, SECONDARY_SOCIAL_ICONS, EMAIL } from '../const'
 
 const ContactContainer = styled.div`
   display: flex;
@@ -103,6 +103,8 @@ const TextBox = styled.p`
   }
 `
 
+const EmailLink = styled.a``
+
 const CreditsText = styled(TextBox)`
   font-size: 12px;
   width: 60%;
@@ -177,7 +179,9 @@ export default function Contact() {
         <ContentContainer>
           <TextContainer>
             <TextBox>Marc "Scramblelock" Sakalauskas</TextBox>
-            <TextBox>info@scramblelock.com</TextBox>
+            <EmailLink target="_blank" href={`mailto:${EMAIL}`}>
+              <TextBox>scramblelock@gmail.com</TextBox>
+            </EmailLink>
             <PrimarySocials>
               {PRIMARY_SOCIAL_ICONS.map((icon, index) => {
                 return (
