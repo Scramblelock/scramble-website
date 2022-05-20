@@ -17,15 +17,15 @@ const AboutContainer = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+  max-width: 100%;
   background-image: url(/about.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
   background-attachment: fixed;
-  text-align: center;
-  margin: auto;
-  padding: 0;
-  max-width: 100%;
 `
 
 const SecondaryAboutContainer = styled.div`
