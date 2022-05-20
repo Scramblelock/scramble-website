@@ -1,12 +1,13 @@
-import Link from 'next/link'
+import Head from 'next/head'
+import HomePage from '../components/homepage'
 
-export default function IndexPage() {
+export default function Home() {
   return (
-    <div>
-      Hello World.{' '}
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </div>
+    <>
+      <Head>
+        <title>Scramblelock</title>
+      </Head>
+      <HomePage />
+    </>
   )
 }
