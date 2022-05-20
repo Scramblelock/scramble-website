@@ -26,6 +26,10 @@ const AboutContainer = styled.div`
   background-repeat: no-repeat;
   background-position: right;
   background-attachment: fixed;
+
+  @media ${media.SMALL_MOBILE} {
+    background-attachment: scroll;
+  }
 `
 
 const SecondaryAboutContainer = styled.div`
