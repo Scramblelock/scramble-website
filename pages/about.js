@@ -25,6 +25,7 @@ const AboutContainer = styled.div`
   text-align: center;
   margin: auto;
   padding: 0;
+  max-width: 100%;
 `
 
 const SecondaryAboutContainer = styled.div`
