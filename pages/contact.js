@@ -8,6 +8,7 @@ import { PRIMARY_SOCIAL_ICONS, SECONDARY_SOCIAL_ICONS } from '../const'
 const ContactContainer = styled.div`
   display: flex;
   justify-content: center;
+  text-align: center;
   height: 100vh;
   width: 100vw;
   background-image: url(/contact1.jpg);
@@ -15,7 +16,10 @@ const ContactContainer = styled.div`
   background-repeat: no-repeat;
   background-position: top center;
   background-attachment: fixed;
-  text-align: center;
+
+  @media ${media.SMALL_MOBILE} {
+    background-attachment: scroll;
+  }
 `
 
 const DownArrow = styled(Image)`
@@ -123,6 +127,7 @@ const FinalImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  text-align: center;
   height: 100vh;
   width: 100vw;
   background-image: url(/contact3.jpg);
@@ -130,7 +135,10 @@ const FinalImageContainer = styled.div`
   background-repeat: no-repeat;
   background-position: top center;
   background-attachment: fixed;
-  text-align: center;
+
+  @media ${media.SMALL_MOBILE} {
+    background-attachment: scroll;
+  }
 `
 
 const CopyrightText = styled.p`
@@ -179,12 +187,7 @@ export default function Contact() {
                     href={icon.url}
                     rel="noopener noreferrer"
                   >
-                    <Image
-                      src={icon.logo}
-                      width={40}
-                      height={40}
-                      alt={icon.name}
-                    />
+                    <Image src={icon.logo} width={40} height={40} alt={icon.name} />
                   </SocialIcon>
                 )
               })}
@@ -199,21 +202,15 @@ export default function Contact() {
                     href={icon.url}
                     rel="noopener noreferrer"
                   >
-                    <Image
-                      src={icon.logo}
-                      width={60}
-                      height={60}
-                      alt={icon.name}
-                    />
+                    <Image src={icon.logo} width={60} height={60} alt={icon.name} />
                   </SocialIcon>
                 )
               })}
             </SecondarySocials>
             <CreditsText>
-              <strong>Photo credits:</strong> Melika Dez, Hoi Do, Kyle Ruggles,
-              Alain Wong, Kei Nakagawa, Morgan Petrowski, Sasha Box, Victah
-              Little, Yo Tidav, Derek Samaha, Little Shao, Mark Valino, KNG
-              Artworks, Julie Soto, Paul Green
+              <strong>Photo credits:</strong> Melika Dez, Hoi Do, Kyle Ruggles, Alain Wong, Kei
+              Nakagawa, Morgan Petrowski, Sasha Box, Victah Little, Yo Tidav, Derek Samaha, Little
+              Shao, Mark Valino, KNG Artworks, Julie Soto, Paul Green
             </CreditsText>
           </TextContainer>
           <ContactImage
@@ -225,9 +222,7 @@ export default function Contact() {
         </ContentContainer>
       </ContactInfoContainer>
       <FinalImageContainer>
-        <CopyrightText>
-          MARC SAKALAUSKAS © {format(new Date(), 'yyyy')}
-        </CopyrightText>
+        <CopyrightText>MARC SAKALAUSKAS © {format(new Date(), 'yyyy')}</CopyrightText>
       </FinalImageContainer>
     </>
   )
