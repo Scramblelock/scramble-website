@@ -79,7 +79,7 @@ const Menu = ({ handleHamburgerClick, hamburgerOpen }) => {
           <Image src={'/close.svg'} width={40} height={40} alt={'close'} />
         </CloseButton>
         {ROUTES.map(route => (
-          <Item key={route.href}>
+          <Item key={route.href} onClick={handleHamburgerClick}>
             <Link href={route.href}>
               <a>{route.label}</a>
             </Link>
@@ -87,12 +87,7 @@ const Menu = ({ handleHamburgerClick, hamburgerOpen }) => {
         ))}
         <SocialItems>
           {SOCIAL_ROUTES.map(route => (
-            <SocialIcon
-              target="_blank"
-              href={route.url}
-              key={route.name}
-              rel="noopener noreferrer"
-            >
+            <SocialIcon target="_blank" href={route.url} key={route.name} rel="noopener noreferrer">
               <Image src={route.logo} width={24} height={24} alt={route.name} />
             </SocialIcon>
           ))}
