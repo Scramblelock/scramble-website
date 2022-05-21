@@ -27,7 +27,7 @@ const AboutContainer = styled.div`
   background-position: right;
   background-attachment: fixed;
 
-  @media ${media.SMALL_MOBILE} {
+  @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
   }
 `
@@ -44,7 +44,7 @@ const SecondaryAboutContainer = styled.div`
   background-position: center;
   background-attachment: fixed;
 
-  @media ${media.SMALL_MOBILE} {
+  @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
   }
 `

@@ -17,7 +17,7 @@ const ContactContainer = styled.div`
   background-position: top center;
   background-attachment: fixed;
 
-  @media ${media.SMALL_MOBILE} {
+  @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
   }
 `
@@ -138,7 +138,7 @@ const FinalImageContainer = styled.div`
   background-position: top center;
   background-attachment: fixed;
 
-  @media ${media.SMALL_MOBILE} {
+  @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
   }
 `
