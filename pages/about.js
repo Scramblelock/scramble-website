@@ -107,7 +107,6 @@ const Title = styled.h1`
 
 const TextBox = styled.p`
   width: 70%;
-  font-size: 24px;
   font-weight: 200;
   line-height: 1.5;
 
