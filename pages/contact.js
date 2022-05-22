@@ -15,7 +15,10 @@ const ContactContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  background-attachment: fixed;
+
+  @media ${media.DESKTOP} {
+    background-attachment: fixed;
+  }
 
   @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
@@ -136,7 +139,10 @@ const FinalImageContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  background-attachment: fixed;
+
+  @media ${media.DESKTOP} {
+    background-attachment: fixed;
+  }
 
   @media ${media.NON_DESKTOP} {
     background-attachment: scroll;

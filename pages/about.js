@@ -25,7 +25,10 @@ const AboutContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
-  background-attachment: fixed;
+
+  @media ${media.DESKTOP} {
+    background-attachment: fixed;
+  }
 
   @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
@@ -42,7 +45,10 @@ const SecondaryAboutContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
+
+  @media ${media.DESKTOP} {
+    background-attachment: fixed;
+  }
 
   @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
