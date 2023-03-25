@@ -61,9 +61,7 @@ const DownArrow = styled(Image)`
 `
 
 const BlackDownArrow = styled(Image)`
-  position: absolute;
-  bottom: 0;
-  margin-top: 10px;
+  margin: 1px 0;
   padding-bottom: 10px;
 
   @media ${media.SMALL_MOBILE} {
@@ -72,13 +70,17 @@ const BlackDownArrow = styled(Image)`
 `
 
 const BioContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+`
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0;
 `
 
 const ResumeContainer = styled.div`
@@ -187,9 +189,11 @@ export default function About() {
         />
       </AboutContainer>
       <BioContainer>
-        <Title>BIO</Title>
-        <TextBox>{BIO.p1}</TextBox>
-        <TextBox>{BIO.p2}</TextBox>
+        <TextContainer>
+          <Title>BIO</Title>
+          <TextBox>{BIO.p1}</TextBox>
+          <TextBox>{BIO.p2}</TextBox>
+        </TextContainer>
         <BlackDownArrow
           src="/chevron-black.svg"
           height={50}

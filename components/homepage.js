@@ -27,7 +27,7 @@ const TextContainer = styled.div`
   height: 70%;
   overflow: auto;
 
-  @media ${media.MOBILE} {
+  @media ${media.NON_DESKTOP} {
     width: 70%;
     padding: 10px;
     margin: 10px 0;
