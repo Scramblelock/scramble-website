@@ -267,6 +267,7 @@ export const PERFORMANCES = [
 
 export const JUDGE_EVENTS = [
   `Coolfunk Locking Battle 2023 - Toronto, Canada`,
+  `Vancouver Street Dance Festival 2020 - Online`,
   `Next Urban Legend 2019 - Paris, France`,
   `Hip Hop Summit Cyprus 2019 - Limassol, Cyprus`,
   `Bashville Stampede 2018 – Nashville, TN, USA`,
