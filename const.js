@@ -121,8 +121,11 @@ export const BIO = {
 }
 
 export const TEACHINGS = [
-  `Urban Element – Weekly Locking - 2022-present – Montreal,
+  `Urban Element – Weekly Locking - 2022-2023 – Montreal,
   Canada`,
+  `Ecole National de Danse Du Canada - 2022-2023 - Montreal, Canada`,
+  `Studio Imperium - 2016-2023 - Montreal, Canada`,
+  `Krossline - Weekly Locking - 2022 - Montreal, Canada`,
   `Equilibrium – Weekly Locking – 2018-2020 –
   Montreal, Canada`,
   `Break City – Weekly Locking – 2018 –
@@ -142,7 +145,8 @@ export const CONTESTS = [
   {
     placement: '1st Place',
     description: [
-      `Juste Debout Washington 2019 (Locking) – Washington DC,
+      `Super Strong Style 2019 (Locking) - Tokyo, Japan`,
+      `Juste Debout USA 2019 (Locking) – Washington DC,
               USA`,
       `Crystallized 2018 (Locking) – Toronto, Canada`,
       `Crystallized
@@ -182,6 +186,8 @@ export const CONTESTS = [
   {
     placement: '2nd Place',
     description: [
+      `Vancouver Street Dance Festival 2023 (Locking) - Vancouver, Canada`,
+      `100LUX Creative Boost 2022 (Locking) - Montreal, Canada`,
       `Juste Debout USA 2013 (Locking) – New York City,
               USA`,
       `Locking Up 2011 (Locking) – Moscow, Russia`,
@@ -214,7 +220,8 @@ export const CONTESTS = [
 ]
 
 export const EVENTS = [
-  `Montreal Loves Hip Hop 2022 - Montreal, Canada`,
+  `Montreal Loves Hip Hop Exhibit 2022-2023 - Montreal, Canada`,
+  `Lockflix & Chill 2023 - Montreal, Canada`,
   `Unlock The Funk 2017-2019 – Montreal, Canada`,
   `Locking 4 Life in
   Canada Tour 2014, 2009 & 2008 – Montreal, Toronto, Ottawa, Quebec
@@ -232,6 +239,9 @@ export const EVENTS = [
 ]
 
 export const PERFORMANCES = [
+  `Imperium Showcase 2023 - Montreal, Canada`,
+  `Public Kitchen 2022 - Boston, MA, USA`,
+  `Montreal Swing Riot 2014-2019 - Montreal, Canada`,
   `Hit The Floor 2018 – Gatineau, Canada`,
   `Breakin Convention 2017 –
   Toronto, Canada`,
@@ -256,6 +266,9 @@ export const PERFORMANCES = [
 ]
 
 export const JUDGE_EVENTS = [
+  `Coolfunk Locking Battle 2023 - Toronto, Canada`,
+  `Next Urban Legend 2019 - Paris, France`,
+  `Hip Hop Summit Cyprus 2019 - Limassol, Cyprus`,
   `Bashville Stampede 2018 – Nashville, TN, USA`,
   `357 Locking Session
   2017 – Moscow, Russia`,
