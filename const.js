@@ -341,6 +341,8 @@ export const IMAGES = [
 ]
 
 export const VIDEOS = [
+  { url: 'https://www.youtube.com/watch?v=e_Pu2oSzX7I' },
+  { url: 'https://www.youtube.com/watch?v=aVq9m7717is' },
   { url: 'https://www.youtube.com/watch?v=xga90SY2KWE' },
   { url: 'https://www.youtube.com/watch?v=64YJaAqSxso' },
   { url: 'https://www.youtube.com/watch?v=VT35LClC_Mo' },
