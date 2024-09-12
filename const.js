@@ -186,6 +186,7 @@ export const CONTESTS = [
   {
     placement: '2nd Place',
     description: [
+      `Vancouver Street Dance Festival 2024 (Locking) - Vancouver, Canada`,
       `Vancouver Street Dance Festival 2023 (Locking) - Vancouver, Canada`,
       `100LUX Creative Boost 2022 (Locking) - Montreal, Canada`,
       `Juste Debout USA 2013 (Locking) – New York City,
@@ -220,13 +221,13 @@ export const CONTESTS = [
 ]
 
 export const EVENTS = [
-  `Montreal Loves Hip Hop Exhibit 2022-2023 - Montreal, Canada`,
+  `Montreal Loves Hip Hop Exhibit 2022-2024 - Montreal, Canada`,
   `Lockflix & Chill 2023 - Montreal, Canada`,
   `Unlock The Funk 2017-2019 – Montreal, Canada`,
   `Locking 4 Life in
   Canada Tour 2014, 2009 & 2008 – Montreal, Toronto, Ottawa, Quebec
   City`,
-  `Family Affair: Locking & Waacking Battle 2013 & 2008 –
+  `Family Affair: Locking & Waacking Battle 2024, 2013 & 2008 –
   Montreal, Canada`,
   `The Hippest Trip: Soul Train Tribute Party 2012 &
   2011 – Montreal, Canada`,
@@ -239,6 +240,8 @@ export const EVENTS = [
 ]
 
 export const PERFORMANCES = [
+  `Tempeo Festival 2024 - Montreal, Canada`,
+  `JOAT International Streetdance Festival 2024 - Montreal, Canada`,
   `Imperium Showcase 2023 - Montreal, Canada`,
   `Public Kitchen 2022 - Boston, MA, USA`,
   `Montreal Swing Riot 2014-2019 - Montreal, Canada`,
@@ -266,6 +269,7 @@ export const PERFORMANCES = [
 ]
 
 export const JUDGE_EVENTS = [
+  `Seminario Locking 2024 - Lima, Peru`,
   `Coolfunk Locking Battle 2023 - Toronto, Canada`,
   `Vancouver Street Dance Festival 2020 - Online`,
   `Next Urban Legend 2019 - Paris, France`,
@@ -355,11 +359,18 @@ export const IMAGES = [
 ]
 
 export const VIDEOS = [
+  { url: 'https://youtu.be/w2qbBFh1czk' },
+  { url: 'https://youtu.be/ua5eVIbmZTA' },
+  { url: 'https://youtu.be/-yxSCn5qASU' },
+  { url: 'https://youtu.be/nVo5xUls5lU' },
   { url: 'https://www.youtube.com/watch?v=e_Pu2oSzX7I' },
   { url: 'https://www.youtube.com/watch?v=aVq9m7717is' },
+  { url: 'https://www.youtube.com/watch?v=OEXK95y2okY' },
   { url: 'https://www.youtube.com/watch?v=xga90SY2KWE' },
+  { url: 'https://youtu.be/G9PBSZellbc' },
   { url: 'https://www.youtube.com/watch?v=64YJaAqSxso' },
   { url: 'https://www.youtube.com/watch?v=VT35LClC_Mo' },
+  { url: 'https://youtu.be/EgIePGitfe4' },
   { url: 'https://www.youtube.com/watch?v=7wXznuqWsZQ' },
   { url: 'https://www.youtube.com/watch?v=F2P6uwSMjR8' },
   { url: 'https://www.youtube.com/watch?v=po4un8hTERU' },
