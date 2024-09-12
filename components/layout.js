@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Navigation from './navigation'
@@ -38,15 +39,10 @@ export default function Layout({ children }) {
       {children}
       {showButton && (
         <BackToTopButton onClick={scrollToTop}>
-          <Image
-            src="/up-arrow.png"
-            width={50}
-            height={50}
-            layout={'raw'}
-            alt="back to top"
-          />
+          <Image src="/up-arrow.png" width={50} height={50} layout={'raw'} alt="back to top" />
         </BackToTopButton>
       )}
+      <SpeedInsights />
     </>
   )
 }
