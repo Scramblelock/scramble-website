@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import * as ga from '../lib/ga'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles, lightTheme } from '../styles/theme.config'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyles />
       <Layout>
         <Component {...pageProps} />
+        <SpeedInsights />
       </Layout>
     </ThemeProvider>
   )
