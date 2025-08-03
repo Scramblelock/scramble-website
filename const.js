@@ -269,6 +269,7 @@ export const PERFORMANCES = [
 ]
 
 export const JUDGE_EVENTS = [
+  `Calgary Hip Hop & Street Dance Festival 2024 - Calgary, Canada`,
   `Seminario Locking 2024 - Lima, Peru`,
   `Coolfunk Locking Battle 2023 - Toronto, Canada`,
   `Vancouver Street Dance Festival 2020 - Online`,
@@ -359,6 +360,7 @@ export const IMAGES = [
 ]
 
 export const VIDEOS = [
+  { url: 'https://www.youtube.com/watch?v=KzPx9TAw0Dw' },
   { url: 'https://youtu.be/w2qbBFh1czk' },
   { url: 'https://youtu.be/ua5eVIbmZTA' },
   { url: 'https://youtu.be/-yxSCn5qASU' },
