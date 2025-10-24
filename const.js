@@ -121,10 +121,10 @@ export const BIO = {
 }
 
 export const TEACHINGS = [
-  `Urban Element – Weekly Locking - 2022-2023 – Montreal,
+  `Urban Element – Weekly Locking - 2022-2025 – Montreal,
   Canada`,
+  `Studio Imperium - 2016-2025 - Montreal, Canada`,
   `Ecole National de Danse Du Canada - 2022-2023 - Montreal, Canada`,
-  `Studio Imperium - 2016-2023 - Montreal, Canada`,
   `Krossline - Weekly Locking - 2022 - Montreal, Canada`,
   `Equilibrium – Weekly Locking – 2018-2020 –
   Montreal, Canada`,
@@ -214,8 +214,7 @@ export const CONTESTS = [
       `Juste Debout Canada 2012 (Locking) –
               Montreal, Canada`,
       `Juste Debout 2010 (Locking) – Paris, France`,
-      `UK
-              Bboy Championships 2007 (Locking) – London, UK`,
+      `UK Bboy Championships 2007 (Locking) – London, UK`,
     ],
   },
 ]

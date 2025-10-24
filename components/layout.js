@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Navigation from './navigation'
+import ClientOnly from './clientOnly'
 
 const BackToTopButton = styled.button`
   position: fixed;
@@ -15,32 +16,55 @@ const BackToTopButton = styled.button`
 export default function Layout({ children }) {
   const [showButton, setShowButton] = useState(false)
 
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        setShowButton(true)
-      } else {
-        setShowButton(false)
-      }
-    })
+  const handleScroll = useCallback(() => {
+    const scrollY = window.pageYOffset
+    setShowButton(scrollY > 300)
   }, [])
 
-  const scrollToTop = () => {
+  useEffect(() => {
+    let timeoutId
+    const throttledScroll = () => {
+      if (timeoutId) return
+      timeoutId = setTimeout(() => {
+        handleScroll()
+        timeoutId = null
+      }, 16) // ~60fps
+    }
+
+    window.addEventListener('scroll', throttledScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', throttledScroll)
+      if (timeoutId) clearTimeout(timeoutId)
+    }
+  }, [handleScroll])
+
+  const scrollToTop = useCallback(() => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     })
-  }
+  }, [])
 
   return (
     <>
-      <Navigation />
+      <ClientOnly>
+        <Navigation />
+      </ClientOnly>
       {children}
-      {showButton && (
-        <BackToTopButton onClick={scrollToTop}>
-          <Image src="/up-arrow.png" width={50} height={50} layout={'raw'} alt="back to top" />
-        </BackToTopButton>
-      )}
+      <ClientOnly>
+        {showButton && (
+          <BackToTopButton onClick={scrollToTop}>
+            <Image
+              src="/up-arrow.png"
+              width={50}
+              height={50}
+              alt="back to top"
+              quality={80}
+              sizes="50px"
+            />
+          </BackToTopButton>
+        )}
+      </ClientOnly>
     </>
   )
 }

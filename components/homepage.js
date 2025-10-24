@@ -1,17 +1,29 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+import { memo } from 'react'
 import { color } from '../color'
 import { media } from '../media'
 
 const HomeContainer = styled.div`
   height: 100vh;
   width: 100vw;
-  background-image: url(/background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 80px;
+
+  @media ${media.TABLET} {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  @media ${media.MOBILE} {
+    justify-content: center;
+    padding-left: 0;
+  }
 `
 
 const TextContainer = styled.div`
@@ -19,31 +31,62 @@ const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   color: ${color.WHITE};
-  position: absolute;
+  position: relative;
   padding: 20px;
   margin: 20px 0;
-  top: 20%;
-  width: 50%;
-  height: 70%;
-  overflow: auto;
+  width: 100%;
+  max-width: 600px;
+  z-index: 2;
 
-  @media ${media.NON_DESKTOP} {
-    width: 70%;
+  @media ${media.TABLET} {
+    width: 90%;
+    padding: 15px;
+    align-items: center;
+  }
+
+  @media ${media.MOBILE} {
+    width: 95%;
     padding: 10px;
     margin: 10px 0;
+    align-items: center;
   }
 `
 
-const MainImage = styled(Image)``
+const BackgroundImage = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+`
+
+const MainImage = styled(Image)`
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  aspect-ratio: 600/250;
+
+  @media ${media.MOBILE} {
+    max-width: 90%;
+  }
+`
 
 const TextBox = styled.div`
   border: 2px solid ${color.WHITE};
-  padding: 0 20px;
-  margin: 50px 70px;
+  padding: 20px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
 
   @media ${media.MOBILE} {
-    width: 70%;
-    margin: 20px 20px;
+    padding: 15px;
+    margin: 15px 0;
   }
 `
 
@@ -60,7 +103,7 @@ const Text = styled.p`
   }
 `
 
-const Button = styled.button`
+const Button = styled(Link)`
   background-color: ${color.WHITE};
   width: 200px;
   height: 50px;
@@ -70,6 +113,12 @@ const Button = styled.button`
   border: 0;
   text-transform: uppercase;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: ${color.BLUE};
+  margin-top: 20px;
 
   &:hover {
     background-color: ${color.BLUE};
@@ -77,32 +126,45 @@ const Button = styled.button`
   }
 
   @media ${media.MOBILE} {
-    width: 60%;
+    width: 80%;
+    max-width: 250px;
     font-size: 14px;
+    height: 45px;
   }
 `
 
-export default function HomePage() {
+function HomePage() {
   return (
     <>
       <HomeContainer>
+        <BackgroundImage
+          src="/background.jpg"
+          alt="Background"
+          fill
+          priority
+          quality={95}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+        />
         <TextContainer>
           <MainImage
             src="/Scramble-logo-invert.png"
             width={600}
             height={250}
             alt="Scramblelock Logo"
+            priority
+            quality={95}
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 600px"
           />
           <TextBox>
-            <Text>Artist and educator specializing in Locking dance</Text>
+            <Text>Artist and educator specializing in Campbellocking (aka Locking) dance</Text>
           </TextBox>
-          <Link href="/about" passHref>
-            <Button>
-              <a>Learn more</a>
-            </Button>
-          </Link>
+          <Button href="/about">Learn more</Button>
         </TextContainer>
       </HomeContainer>
     </>
   )
 }
+
+export default memo(HomePage)

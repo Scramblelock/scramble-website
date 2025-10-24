@@ -14,14 +14,24 @@ const ContactContainer = styled.div`
   background-image: url(/contact1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center 10%;
+  position: relative;
 
   @media ${media.DESKTOP} {
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center 10%;
   }
 
   @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
+    background-size: cover;
+    background-position: center 10%;
+  }
+
+  @media ${media.MOBILE} {
+    background-size: cover;
+    background-position: center 10%;
   }
 `
 
@@ -90,9 +100,19 @@ const SecondarySocials = styled.div`
 
 const ContactImage = styled(Image)`
   margin-left: 20px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  @media ${media.TABLET} {
+    margin-left: 10px;
+    max-width: 90%;
+  }
 
   @media ${media.MOBILE} {
     margin-left: 0;
+    max-width: 80%;
+    margin-top: 20px;
   }
 `
 
@@ -138,14 +158,24 @@ const FinalImageContainer = styled.div`
   background-image: url(/contact3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center 10%;
+  position: relative;
 
   @media ${media.DESKTOP} {
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center 20%;
   }
 
   @media ${media.NON_DESKTOP} {
     background-attachment: scroll;
+    background-size: cover;
+    background-position: center 10%;
+  }
+
+  @media ${media.MOBILE} {
+    background-size: cover;
+    background-position: center 10%;
   }
 `
 
@@ -176,46 +206,43 @@ export default function Contact() {
           src="/chevron-white.svg"
           height={50}
           width={50}
-          layout={'raw'}
           alt="down arrow"
+          quality={80}
+          sizes="50px"
         />
       </ContactContainer>
       <ContactInfoContainer>
         <Title>CONTACT</Title>
         <ContentContainer>
           <TextContainer>
-            <TextBox>Marc "Scramblelock" Sakalauskas</TextBox>
+            <TextBox>Marc &quot;Scramblelock&quot; Sakalauskas</TextBox>
             <EmailLink target="_blank" href={`mailto:${EMAIL}`}>
               <TextBox>scramblelock@gmail.com</TextBox>
             </EmailLink>
             <PrimarySocials>
-              {PRIMARY_SOCIAL_ICONS.map((icon, index) => {
-                return (
-                  <SocialIcon
-                    target="_blank"
-                    key={icon.name}
-                    href={icon.url}
-                    rel="noopener noreferrer"
-                  >
-                    <Image src={icon.logo} width={40} height={40} alt={icon.name} />
-                  </SocialIcon>
-                )
-              })}
+              {PRIMARY_SOCIAL_ICONS.map(icon => (
+                <SocialIcon
+                  target="_blank"
+                  key={icon.name}
+                  href={icon.url}
+                  rel="noopener noreferrer"
+                >
+                  <Image src={icon.logo} width={40} height={40} alt={icon.name} />
+                </SocialIcon>
+              ))}
             </PrimarySocials>
             <SecondarySocials>
               {' '}
-              {SECONDARY_SOCIAL_ICONS.map((icon, index) => {
-                return (
-                  <SocialIcon
-                    target="_blank"
-                    key={icon.name}
-                    href={icon.url}
-                    rel="noopener noreferrer"
-                  >
-                    <Image src={icon.logo} width={60} height={60} alt={icon.name} />
-                  </SocialIcon>
-                )
-              })}
+              {SECONDARY_SOCIAL_ICONS.map(icon => (
+                <SocialIcon
+                  target="_blank"
+                  key={icon.name}
+                  href={icon.url}
+                  rel="noopener noreferrer"
+                >
+                  <Image src={icon.logo} width={60} height={60} alt={icon.name} />
+                </SocialIcon>
+              ))}
             </SecondarySocials>
             <CreditsText>
               <strong>Photo credits:</strong> Melika Dez, Hoi Do, Kyle Ruggles, Alain Wong, Kei
