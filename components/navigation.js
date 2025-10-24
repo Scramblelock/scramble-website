@@ -202,7 +202,7 @@ const Navigation = () => {
           <Burger />
         </BurgerNav>
       </NavContainer>
-      <Menu hamburgerOpen={hamburgerOpen} handleHamburgerClick={handleHamburgerClick} />
+      <Menu $hamburgerOpen={hamburgerOpen} handleHamburgerClick={handleHamburgerClick} />
     </>
   )
 }

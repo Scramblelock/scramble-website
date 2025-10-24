@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import styled from 'styled-components'
 import { Slider } from '../../components/slider'
 import { IMAGES } from '../../const'
@@ -9,8 +10,13 @@ const ImageContainer = styled.div`
 
 export default function Photos() {
   return (
-    <ImageContainer>
-      <Slider images={IMAGES} />
-    </ImageContainer>
+    <>
+      <Head>
+        <link rel="preload" href={IMAGES[0]?.src} as="image" />
+      </Head>
+      <ImageContainer>
+        <Slider images={IMAGES} />
+      </ImageContainer>
+    </>
   )
 }
