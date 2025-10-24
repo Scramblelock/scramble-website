@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import { memo } from 'react'
 import { media } from '../media'
 import {
   BIO,
@@ -21,18 +22,8 @@ const AboutContainer = styled.div`
   margin: auto;
   padding: 0;
   max-width: 100%;
-  background-image: url(/about.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: right;
-
-  @media ${media.DESKTOP} {
-    background-attachment: fixed;
-  }
-
-  @media ${media.NON_DESKTOP} {
-    background-attachment: scroll;
-  }
+  position: relative;
+  overflow: hidden;
 `
 
 const SecondaryAboutContainer = styled.div`
@@ -41,31 +32,52 @@ const SecondaryAboutContainer = styled.div`
   position: relative;
   text-align: center;
   height: 100vh;
-  background-image: url(/boxes.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  overflow: hidden;
+`
 
-  @media ${media.DESKTOP} {
-    background-attachment: fixed;
-  }
+const BackgroundImage = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 
   @media ${media.NON_DESKTOP} {
-    background-attachment: scroll;
+    object-fit: cover;
+    object-position: 80% center;
+  }
+
+  @media ${media.TABLET} {
+    object-fit: cover;
+    object-position: 80% center;
   }
 `
 
 const DownArrow = styled(Image)`
-  align-self: flex-end;
-  padding-bottom: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 `
 
 const BlackDownArrow = styled(Image)`
   margin: 1px 0;
   padding-bottom: 10px;
+  z-index: 1;
+  width: 50px !important;
+  height: 50px !important;
+
+  @media ${media.MOBILE} {
+    margin: 5px 0;
+    padding-bottom: 5px;
+  }
 
   @media ${media.SMALL_MOBILE} {
-    height: 40px;
+    width: 40px !important;
+    height: 40px !important;
   }
 `
 
@@ -81,6 +93,10 @@ const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 100px 0;
+
+  @media ${media.MOBILE} {
+    margin: 20px 0;
+  }
 `
 
 const ResumeContainer = styled.div`
@@ -176,16 +192,26 @@ const PlacementText = styled.p`
   }
 `
 
-export default function About() {
+function About() {
   return (
     <>
       <AboutContainer>
+        <BackgroundImage
+          src="/about.jpg"
+          alt="About background"
+          fill
+          quality={85}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+        />
         <DownArrow
           src="/chevron-white.svg"
           height={50}
           width={50}
-          layout={'raw'}
           alt="down arrow"
+          quality={80}
+          sizes="50px"
         />
       </AboutContainer>
       <BioContainer>
@@ -198,17 +224,28 @@ export default function About() {
           src="/chevron-black.svg"
           height={50}
           width={50}
-          layout={'raw'}
           alt="down arrow"
+          quality={80}
+          sizes="50px"
         />
       </BioContainer>
       <SecondaryAboutContainer>
+        <BackgroundImage
+          src="/boxes.jpg"
+          alt="Boxes background"
+          fill
+          quality={85}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+        />
         <DownArrow
           src="/chevron-white.svg"
           height={50}
           width={50}
-          layout={'raw'}
           alt="down arrow"
+          quality={80}
+          sizes="50px"
         />
       </SecondaryAboutContainer>
       <ResumeContainer>
@@ -217,9 +254,9 @@ export default function About() {
           <LeftColumn>
             <UnorderedList>
               <ResumeSubHeader>Teaching</ResumeSubHeader>
-              {TEACHINGS.map((teaching, index) => {
-                return <ListItem key={`teaching-${index}`}>{teaching}</ListItem>
-              })}
+              {TEACHINGS.map((teaching, index) => (
+                <ListItem key={`teaching-${index}`}>{teaching}</ListItem>
+              ))}
             </UnorderedList>
             <UnorderedList>
               <ResumeSubHeader>Contests</ResumeSubHeader>
@@ -238,33 +275,33 @@ export default function About() {
           <RightColumn>
             <UnorderedList>
               <ResumeSubHeader>Events Organized</ResumeSubHeader>
-              {EVENTS.map((event, index) => {
-                return <ListItem key={`event-${index}`}>{event}</ListItem>
-              })}
+              {EVENTS.map((event, index) => (
+                <ListItem key={`event-${index}`}>{event}</ListItem>
+              ))}
             </UnorderedList>
             <UnorderedList>
               <ResumeSubHeader>Performances</ResumeSubHeader>
-              {PERFORMANCES.map((performance, index) => {
-                return <ListItem key={`performance-${index}`}>{performance}</ListItem>
-              })}
+              {PERFORMANCES.map((performance, index) => (
+                <ListItem key={`performance-${index}`}>{performance}</ListItem>
+              ))}
             </UnorderedList>
             <UnorderedList>
               <ResumeSubHeader>Guest Judge</ResumeSubHeader>
-              {JUDGE_EVENTS.map((event, index) => {
-                return <ListItem key={`judge-${index}`}>{event}</ListItem>
-              })}
+              {JUDGE_EVENTS.map((event, index) => (
+                <ListItem key={`judge-${index}`}>{event}</ListItem>
+              ))}
             </UnorderedList>
             <UnorderedList>
               <ResumeSubHeader>Battle Guest</ResumeSubHeader>
-              {BATTLE_GUEST_EVENTS.map((event, index) => {
-                return <ListItem key={`battle-${index}`}>{event}</ListItem>
-              })}
+              {BATTLE_GUEST_EVENTS.map((event, index) => (
+                <ListItem key={`battle-${index}`}>{event}</ListItem>
+              ))}
             </UnorderedList>
             <UnorderedList>
               <ResumeSubHeader>Others</ResumeSubHeader>
-              {OTHERS.map((event, index) => {
-                return <ListItem key={`other-${index}`}>{event}</ListItem>
-              })}
+              {OTHERS.map((event, index) => (
+                <ListItem key={`other-${index}`}>{event}</ListItem>
+              ))}
             </UnorderedList>
           </RightColumn>
         </GridContainer>
@@ -272,3 +309,5 @@ export default function About() {
     </>
   )
 }
+
+export default memo(About)

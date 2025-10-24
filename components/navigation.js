@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, memo } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -14,15 +14,34 @@ const NavContainer = styled.div`
   position: fixed;
   margin: 0 auto;
   background-color: ${color.GREY};
-  background: ${props => `rgba(10, 10, 10, ${props.backgroundTransparacy})`};
+  background: ${props => `rgba(10, 10, 10, ${props.$backgroundTransparacy})`};
   display: flex;
   flex-direction: row;
   align-items: center;
-  z-index: 1;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
+  @media ${media.MOBILE} {
+    display: ${props => (props.$hamburgerOpen ? 'none' : 'flex')};
+  }
 `
 
-const LogoLink = styled.a`
+const LogoLink = styled.div`
   margin-left: 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  outline: none;
+
+  &:focus {
+    outline: 2px solid ${color.WHITE};
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
   @media ${media.MOBILE} {
     margin-left: 5px;
@@ -45,7 +64,7 @@ const Item = styled.li`
   color: ${color.WHITE};
 
   &:hover a {
-    color: ${color.BLACK};
+    color: ${color.BEIGE};
   }
 
   &#social {
@@ -60,6 +79,11 @@ const SocialIcon = styled.a`
   padding: 0 3px;
   margin: 0 6px;
   cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `
 
 const NoBurgerNav = styled.div`
@@ -76,7 +100,7 @@ const BurgerNav = styled.div`
   }
 `
 
-const Anchor = styled.a`
+const StyledLink = styled(Link)`
   &.active {
     border-bottom: 2px solid ${color.WHITE};
   }
@@ -85,83 +109,105 @@ const Anchor = styled.a`
 const Navigation = () => {
   const router = useRouter()
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
-  const [clientWindowHeight, setClientWindowHeight] = useState('')
+  const [clientWindowHeight, setClientWindowHeight] = useState(0)
   const [backgroundTransparacy, setBackgroundTransparacy] = useState(0)
 
-  const handleHamburgerClick = () => {
-    setHamburgerOpen(!hamburgerOpen)
-  }
+  const handleHamburgerClick = useCallback(() => {
+    setHamburgerOpen(prev => !prev)
+  }, [])
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     setClientWindowHeight(window.scrollY)
-  }
+  }, [])
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  })
-
-  useEffect(() => {
-    let backgroundTransparacyVar = clientWindowHeight / 3000
-
-    if (backgroundTransparacyVar < 1) {
-      setBackgroundTransparacy(backgroundTransparacyVar)
+    let timeoutId
+    const throttledScroll = () => {
+      if (timeoutId) return
+      timeoutId = setTimeout(() => {
+        handleScroll()
+        timeoutId = null
+      }, 16) // ~60fps
     }
+
+    window.addEventListener('scroll', throttledScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', throttledScroll)
+      if (timeoutId) clearTimeout(timeoutId)
+    }
+  }, [handleScroll])
+
+  useEffect(() => {
+    const backgroundTransparacyVar = Math.min(clientWindowHeight / 3000, 1)
+    setBackgroundTransparacy(backgroundTransparacyVar)
   }, [clientWindowHeight])
 
   return (
-    <NavContainer backgroundTransparacy={backgroundTransparacy}>
-      <Link href="/" passHref>
-        <LogoLink>
+    <>
+      <NavContainer $backgroundTransparacy={backgroundTransparacy} $hamburgerOpen={hamburgerOpen}>
+        <LogoLink
+          tabIndex={1}
+          role="button"
+          aria-label="Go to homepage"
+          onClick={() => (window.location.href = '/')}
+          onKeyDown={e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              window.location.href = '/'
+            }
+          }}
+        >
           <Image
             src="/Scramble-logo-invert.png"
             width={120}
             height={50}
             alt="Scramblelock Logo"
+            quality={90}
+            sizes="120px"
           />
         </LogoLink>
-      </Link>
-      <NoBurgerNav>
-        <NavItems>
-          {ROUTES.map(route => (
-            <Item key={route.href}>
-              <Link href={route.href} passHref>
-                <Anchor
+        <NoBurgerNav>
+          <NavItems>
+            {ROUTES.map((route, index) => (
+              <Item key={route.href}>
+                <StyledLink
+                  href={route.href}
                   className={router.pathname === route.href ? 'active' : ''}
+                  tabIndex={2 + index}
                 >
                   {route.label}
-                </Anchor>
-              </Link>
-            </Item>
-          ))}
-          <Item id={'social'}>
-            {SOCIAL_ROUTES.map(route => (
-              <SocialIcon
-                target="_blank"
-                key={route.name}
-                href={route.url}
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src={route.logo}
-                  width={16}
-                  height={16}
-                  alt={route.name}
-                />
-              </SocialIcon>
+                </StyledLink>
+              </Item>
             ))}
-          </Item>
-        </NavItems>
-      </NoBurgerNav>
-      <BurgerNav onClick={handleHamburgerClick}>
-        <Burger />
-      </BurgerNav>
-      <Menu
-        hamburgerOpen={hamburgerOpen}
-        handleHamburgerClick={handleHamburgerClick}
-      />
-    </NavContainer>
+            <Item id={'social'}>
+              {SOCIAL_ROUTES.map((route, index) => (
+                <SocialIcon
+                  target="_blank"
+                  key={route.name}
+                  href={route.url}
+                  rel="noopener noreferrer"
+                  tabIndex={2 + ROUTES.length + index}
+                >
+                  <Image
+                    src={route.logo}
+                    width={16}
+                    height={16}
+                    alt={route.name}
+                    quality={80}
+                    sizes="16px"
+                  />
+                </SocialIcon>
+              ))}
+            </Item>
+          </NavItems>
+        </NoBurgerNav>
+        <BurgerNav onClick={handleHamburgerClick}>
+          <Burger />
+        </BurgerNav>
+      </NavContainer>
+      <Menu hamburgerOpen={hamburgerOpen} handleHamburgerClick={handleHamburgerClick} />
+    </>
   )
 }
 
-export default Navigation
+export default memo(Navigation)
