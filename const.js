@@ -359,7 +359,10 @@ export const IMAGES = [
 ]
 
 export const VIDEOS = [
-  { url: 'https://www.youtube.com/watch?v=KzPx9TAw0Dw' },
+  { url: 'https://youtu.be/1pXzTNzx3fg' },
+  { url: 'https://youtu.be/fkohmwbSRtc' },
+  { url: 'https://youtu.be/oILg8N67Eu8' },
+  { url: 'https://youtu.be/KzPx9TAw0Dw' },
   { url: 'https://youtu.be/w2qbBFh1czk' },
   { url: 'https://youtu.be/ua5eVIbmZTA' },
   { url: 'https://youtu.be/-yxSCn5qASU' },
