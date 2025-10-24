@@ -292,7 +292,7 @@ function Videos() {
         })}
       </VideoWrapper>
 
-      <PrevButton onClick={prevSlide} aria-label="Previous video" tabIndex={10}>
+      <PrevButton onClick={prevSlide} aria-label="Previous video">
         <Image
           src={'/left-chevron.png'}
           width={30}
@@ -303,7 +303,7 @@ function Videos() {
         />
       </PrevButton>
 
-      <NextButton onClick={nextSlide} aria-label="Next video" tabIndex={11}>
+      <NextButton onClick={nextSlide} aria-label="Next video">
         <Image
           src={'/right-chevron.png'}
           width={30}

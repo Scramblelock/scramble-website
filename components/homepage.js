@@ -104,7 +104,7 @@ const Text = styled.p`
 `
 
 const Button = styled(Link)`
-  background-color: ${color.WHITE};
+  background-color: ${color.BLUE};
   width: 200px;
   height: 50px;
   border-radius: 30px;
@@ -117,12 +117,20 @@ const Button = styled(Link)`
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: ${color.BLUE};
+  color: ${color.WHITE};
   margin-top: 20px;
+  transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${color.BLUE};
+    background-color: ${color.DARK_GREY};
     color: ${color.WHITE};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 116, 165, 0.3);
+  }
+
+  &:focus {
+    outline: 3px solid ${color.BEIGE};
+    outline-offset: 2px;
   }
 
   @media ${media.MOBILE} {
@@ -142,8 +150,8 @@ function HomePage() {
           alt="Background"
           fill
           priority
-          quality={95}
-          sizes="100vw"
+          quality={75}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
@@ -154,7 +162,7 @@ function HomePage() {
             height={250}
             alt="Scramblelock Logo"
             priority
-            quality={95}
+            quality={80}
             sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 600px"
           />
           <TextBox>

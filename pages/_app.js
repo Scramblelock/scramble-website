@@ -9,6 +9,7 @@ import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
 import PerformanceMonitor from '../components/performanceMonitor'
 import ClientOnly from '../components/clientOnly'
+import CookieConsent from '../components/cookieConsent'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }) {
         <ClientOnly>
           <SpeedInsights />
           <Analytics />
+          <CookieConsent />
         </ClientOnly>
       </Layout>
     </ThemeProvider>

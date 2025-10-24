@@ -24,9 +24,24 @@ function Home() {
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          
+          // Set default consent to denied
+          gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+          });
+          
           gtag('js', new Date());
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
             page_path: window.location.pathname,
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure',
+            cookie_domain: 'auto',
+            send_page_view: true,
+            allow_google_signals: false,
+            allow_ad_personalization_signals: false
           });
         `}
       </Script>
