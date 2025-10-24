@@ -85,9 +85,9 @@ const MenuLogo = styled.div`
   z-index: 1002;
 `
 
-const Menu = ({ handleHamburgerClick, hamburgerOpen }) => {
+const Menu = ({ handleHamburgerClick, $hamburgerOpen }) => {
   return (
-    <StyledMenu $isOpen={hamburgerOpen}>
+    <StyledMenu $isOpen={$hamburgerOpen}>
       <NavItems>
         <MenuLogo>
           <Image
