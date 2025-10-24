@@ -1,13 +1,9 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import useSlider from '../hooks/useSlider'
 import { media } from '../media'
 
 const SliderContainer = styled.div`
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
   height: 100vh;
   width: 100%;
   position: relative;
@@ -15,11 +11,6 @@ const SliderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media ${media.MOBILE} {
-    background-size: contain;
-    background-position: center center;
-  }
 `
 
 const SliderContent = styled.div`
@@ -31,6 +22,40 @@ const SliderContent = styled.div`
 
 const SliderFeature = styled.div`
   text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const MainImage = styled(Image)`
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
+  @media ${media.MOBILE} {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media ${media.TABLET} {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media (min-width: 769px) {
+    height: 100vh;
+    width: auto;
+    object-fit: contain;
+  }
 `
 
 const SliderButtonLeft = styled.button`
@@ -122,29 +147,22 @@ const ArrowButton = styled(Image)`
 `
 
 export const Slider = ({ images }) => {
-  const slideImage = useRef(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [mounted, setMounted] = useState(false)
-  const { goToPreviousSlide, goToNextSlide } = useSlider(slideImage, images)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  // Callback ref to ensure image is set when ref is available
-  const setSlideImageRef = useCallback(
-    node => {
-      slideImage.current = node
-      if (node && images && images.length > 0) {
-        node.style.backgroundImage = `url(${images[0].src})`
-        node.style.backgroundSize = 'contain'
-        node.style.backgroundPosition = 'center center'
-        node.style.backgroundRepeat = 'no-repeat'
-      }
-    },
-    [images]
-  )
+  const goToPreviousSlide = useCallback(() => {
+    setCurrentImageIndex(prev => (prev === 0 ? images.length - 1 : prev - 1))
+  }, [images.length])
 
-  if (!mounted) {
+  const goToNextSlide = useCallback(() => {
+    setCurrentImageIndex(prev => (prev === images.length - 1 ? 0 : prev + 1))
+  }, [images.length])
+
+  if (!mounted || !images || images.length === 0) {
     return (
       <SliderContainer>
         <div
@@ -163,8 +181,10 @@ export const Slider = ({ images }) => {
     )
   }
 
+  const currentImage = images[currentImageIndex]
+
   return (
-    <SliderContainer ref={setSlideImageRef}>
+    <SliderContainer>
       <SliderContent>
         <SliderButtonLeft onClick={goToPreviousSlide} aria-label="Previous photo">
           <ArrowButton
@@ -176,7 +196,20 @@ export const Slider = ({ images }) => {
             sizes="(max-width: 768px) 30px, (max-width: 545px) 25px, 100px"
           />
         </SliderButtonLeft>
-        <SliderFeature />
+        <SliderFeature>
+          <MainImage
+            src={currentImage.src}
+            alt={`Photo ${currentImageIndex + 1} of ${images.length}`}
+            width={1920}
+            height={1080}
+            priority={currentImageIndex === 0}
+            fetchpriority={currentImageIndex === 0 ? 'high' : 'auto'}
+            quality={90}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          />
+        </SliderFeature>
         <SliderButtonRight onClick={goToNextSlide} aria-label="Next photo">
           <ArrowButton
             src={'/right-chevron.png'}
