@@ -166,7 +166,7 @@ export const Slider = ({ images }) => {
   return (
     <SliderContainer ref={setSlideImageRef}>
       <SliderContent>
-        <SliderButtonLeft onClick={goToPreviousSlide} tabIndex={10} aria-label="Previous photo">
+        <SliderButtonLeft onClick={goToPreviousSlide} aria-label="Previous photo">
           <ArrowButton
             src={'/left-chevron.png'}
             width={100}
@@ -177,7 +177,7 @@ export const Slider = ({ images }) => {
           />
         </SliderButtonLeft>
         <SliderFeature />
-        <SliderButtonRight onClick={goToNextSlide} tabIndex={11} aria-label="Next photo">
+        <SliderButtonRight onClick={goToNextSlide} aria-label="Next photo">
           <ArrowButton
             src={'/right-chevron.png'}
             width={100}

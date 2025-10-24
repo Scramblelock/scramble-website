@@ -146,7 +146,6 @@ const Navigation = () => {
     <>
       <NavContainer $backgroundTransparacy={backgroundTransparacy} $hamburgerOpen={hamburgerOpen}>
         <LogoLink
-          tabIndex={1}
           role="button"
           aria-label="Go to homepage"
           onClick={() => (window.location.href = '/')}
@@ -173,7 +172,6 @@ const Navigation = () => {
                 <StyledLink
                   href={route.href}
                   className={router.pathname === route.href ? 'active' : ''}
-                  tabIndex={2 + index}
                 >
                   {route.label}
                 </StyledLink>
@@ -186,7 +184,6 @@ const Navigation = () => {
                   key={route.name}
                   href={route.url}
                   rel="noopener noreferrer"
-                  tabIndex={2 + ROUTES.length + index}
                 >
                   <Image
                     src={route.logo}
