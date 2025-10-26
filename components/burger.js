@@ -27,9 +27,13 @@ const StyledBurger = styled.button`
   }
 `
 
-const Burger = () => {
+const Burger = ({ isOpen, onClick }) => {
   return (
-    <StyledBurger>
+    <StyledBurger
+      aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+      aria-expanded={isOpen}
+      onClick={onClick}
+    >
       <div />
       <div />
       <div />

@@ -198,8 +198,8 @@ const Navigation = () => {
             </Item>
           </NavItems>
         </NoBurgerNav>
-        <BurgerNav onClick={handleHamburgerClick}>
-          <Burger />
+        <BurgerNav>
+          <Burger isOpen={hamburgerOpen} onClick={handleHamburgerClick} />
         </BurgerNav>
       </NavContainer>
       <Menu $hamburgerOpen={hamburgerOpen} handleHamburgerClick={handleHamburgerClick} />

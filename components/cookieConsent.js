@@ -48,18 +48,19 @@ const CookieButtons = styled.div`
 `
 
 const CookieButton = styled.button`
-  background: ${props => (props.primary ? color.BLUE : 'transparent')};
+  background: ${props => (props.primary ? color.DARK_BLUE : 'transparent')};
   color: ${props => (props.primary ? color.WHITE : color.WHITE)};
-  border: ${props => (props.primary ? 'none' : `1px solid ${color.WHITE}`)};
+  border: ${props => (props.primary ? 'none' : `2px solid ${color.WHITE}`)};
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 600;
   transition: all 0.3s ease;
 
   &:hover {
-    background: ${props => (props.primary ? color.WHITE : color.WHITE)};
-    color: ${props => (props.primary ? color.BLUE : color.DARK_GREY)};
+    background: ${props => (props.primary ? color.DARKER_BLUE : color.WHITE)};
+    color: ${props => (props.primary ? color.WHITE : color.DARK_BLUE)};
   }
 
   @media ${media.MOBILE} {

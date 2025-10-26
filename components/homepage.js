@@ -104,7 +104,7 @@ const Text = styled.p`
 `
 
 const Button = styled(Link)`
-  background-color: ${color.BLUE};
+  background-color: ${color.DARK_BLUE};
   width: 200px;
   height: 50px;
   border-radius: 30px;
@@ -122,10 +122,10 @@ const Button = styled(Link)`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${color.DARK_GREY};
+    background-color: ${color.DARKER_BLUE};
     color: ${color.WHITE};
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(34, 116, 165, 0.3);
+    box-shadow: 0 4px 12px rgba(26, 90, 122, 0.4);
   }
 
   &:focus {
