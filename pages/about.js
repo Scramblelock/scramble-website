@@ -16,7 +16,6 @@ import {
 const AboutContainer = styled.div`
   display: flex;
   justify-content: center;
-  height: 100vh;
   width: 100vw;
   text-align: center;
   margin: auto;
@@ -31,18 +30,16 @@ const SecondaryAboutContainer = styled.div`
   justify-content: center;
   position: relative;
   text-align: center;
-  height: 100vh;
+  width: 100%;
   overflow: hidden;
 `
 
 const BackgroundImage = styled(Image)`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   z-index: -1;
+  display: block;
 
   @media ${media.NON_DESKTOP} {
     object-fit: cover;
@@ -86,6 +83,7 @@ const BioContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 60vh;
 `
 
 const TextContainer = styled.div`
@@ -106,9 +104,11 @@ const ResumeContainer = styled.div`
   justify-content: center;
   position: relative;
   padding: 200px 100px;
+  min-height: 80vh;
 
   @media ${media.MOBILE} {
     padding: 100px 10px;
+    min-height: 60vh;
   }
 `
 
@@ -144,28 +144,27 @@ const TextBox = styled.p`
 `
 
 const GridContainer = styled.div`
-  display: table;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+
+  @media ${media.NON_DESKTOP} {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10%;
+  }
 `
 
 const LeftColumn = styled.div`
-  float: left;
-  width: 50%;
-
-  @media ${media.NON_DESKTOP} {
-    width: 100%;
-    padding: 0 10%;
-  }
+  display: flex;
+  flex-direction: column;
 `
 
 const RightColumn = styled.div`
-  float: left;
-  width: 50%;
-  padding-left: 40px;
-
-  @media ${media.NON_DESKTOP} {
-    width: 100%;
-    padding: 0 10%;
-  }
+  display: flex;
+  flex-direction: column;
 `
 
 const UnorderedList = styled.ul`
@@ -199,11 +198,13 @@ function About() {
         <BackgroundImage
           src="/about.jpg"
           alt="About background"
-          fill
+          width={1920}
+          height={1080}
           quality={85}
           sizes="100vw"
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          priority
         />
         <DownArrow
           src="/chevron-white.svg"
@@ -233,11 +234,13 @@ function About() {
         <BackgroundImage
           src="/boxes.jpg"
           alt="Boxes background"
-          fill
+          width={1920}
+          height={1080}
           quality={85}
           sizes="100vw"
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          priority
         />
         <DownArrow
           src="/chevron-white.svg"
