@@ -1,5 +1,3 @@
-import { GetServerSideProps } from 'next'
-
 function generateSiteMap() {
   const baseUrl = 'https://scramblelock.com' // Replace with your actual domain
 
@@ -43,7 +41,7 @@ function SiteMap() {
   // getServerSideProps will do the heavy lifting
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+export const getServerSideProps = async ({ res }) => {
   // We generate the XML sitemap with the posts data
   const sitemap = generateSiteMap()
 
