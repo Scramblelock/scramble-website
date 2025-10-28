@@ -29,6 +29,106 @@ const nextConfig = {
   },
   // Performance optimizations
   swcMinify: true,
+  // Redirects for old WordPress paths
+  async redirects() {
+    return [
+      {
+        source: '/wp-admin/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/wp-content/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/wp-includes/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/wp-json/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/xmlrpc.php',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/feed/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/comments/feed/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/author/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/category/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/tag/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/page/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/blog/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/news/:path*',
+        destination: '/404',
+        permanent: true,
+      },
+      {
+        source: '/gallery/:path*',
+        destination: '/media/photos',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/:path*',
+        destination: '/media/photos',
+        permanent: true,
+      },
+      {
+        source: '/videos/:path*',
+        destination: '/media/videos',
+        permanent: true,
+      },
+      {
+        source: '/about-me/:path*',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/contact-us/:path*',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/home/:path*',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = withBundleAnalyzer(nextConfig)
