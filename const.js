@@ -39,11 +39,6 @@ export const SOCIAL_ROUTES = [
     url: 'https://www.facebook.com/scramblelock/',
     logo: '/facebook.png',
   },
-  {
-    name: 'Twitter',
-    url: 'https://www.twitter.com/scramblelock/',
-    logo: '/twitter.png',
-  },
 ]
 
 export const PRIMARY_SOCIAL_ICONS = [
@@ -61,11 +56,6 @@ export const PRIMARY_SOCIAL_ICONS = [
     name: 'Facebook',
     url: 'https://www.facebook.com/scramblelock/',
     logo: '/facebook-black.png',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://www.twitter.com/scramblelock/',
-    logo: '/twitter-black.png',
   },
   {
     name: 'LinkedIn',
