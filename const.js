@@ -111,7 +111,7 @@ export const BIO = {
 }
 
 export const TEACHINGS = [
-  `Urban Element – Weekly Locking - 2022-2025 – Montreal,
+  `Urban Element – Weekly Locking - 2022-2026 – Montreal,
   Canada`,
   `Studio Imperium - 2016-2025 - Montreal, Canada`,
   `Ecole National de Danse Du Canada - 2022-2023 - Montreal, Canada`,
@@ -135,6 +135,7 @@ export const CONTESTS = [
   {
     placement: '1st Place',
     description: [
+      `Stop & Lock 2025 (Locking) - Monterrey, Mexico`,
       `Super Strong Style 2019 (Locking) - Tokyo, Japan`,
       `Juste Debout USA 2019 (Locking) – Washington DC,
               USA`,
@@ -196,6 +197,7 @@ export const CONTESTS = [
   {
     placement: 'Semi Finalist',
     description: [
+      `Crystallized 2025 (Locking) – Toronto, Canada`,
       `Juste Debout 2019 (Locking) – Paris, France`,
       `Lock Is Not A
               Joke 2015 (Locking) – St. Pardoux d’Arnet, France`,
