@@ -95,7 +95,7 @@ export const SECONDARY_SOCIAL_ICONS = [
 export const BIO = {
   p1: `Marc "Scramblelock" Sakalauskas (Canada) took up streetdance in 1998,
   starting with b-boying. He soon developed a genuine love for hip hop
-  culture and discovered locking in 2000 and began researching the dance
+  culture and discovered Campbellocking (aka Locking) in 2000 and began researching the dance
   intensely.`,
   p2: `Scramble has learned from many originators and highly respected
   dancers in the locking scene. He has won several international locking
@@ -135,7 +135,8 @@ export const CONTESTS = [
   {
     placement: '1st Place',
     description: [
-      `Stop & Lock 2025 (Locking) - Monterrey, Mexico`,
+      `Astrofunk 2026 (Campbellocking) - Toronto, Canada`,
+      `Stop & Lock 2025 (Campbellocking) - Monterrey, Mexico`,
       `Super Strong Style 2019 (Locking) - Tokyo, Japan`,
       `Juste Debout USA 2019 (Locking) – Washington DC,
               USA`,
