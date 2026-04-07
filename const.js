@@ -136,6 +136,7 @@ export const CONTESTS = [
   {
     placement: '1st Place',
     description: [
+      `Back To The Funk 2026 (Campbellocking) - Boston, USA`,
       `Astrofunk 2026 (Campbellocking) - Toronto, Canada`,
       `Stop & Lock 2025 (Campbellocking) - Monterrey, Mexico`,
       `Super Strong Style 2019 (Locking) - Tokyo, Japan`,
