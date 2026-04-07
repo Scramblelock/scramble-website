@@ -220,6 +220,7 @@ function About() {
           <Title>BIO</Title>
           <TextBox>{BIO.p1}</TextBox>
           <TextBox>{BIO.p2}</TextBox>
+          <TextBox>{BIO.p3}</TextBox>
         </TextContainer>
         <BlackDownArrow
           src="/chevron-black.svg"
