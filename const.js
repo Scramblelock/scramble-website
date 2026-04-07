@@ -108,6 +108,7 @@ export const BIO = {
   event. He is also focused on building LockUnity, the Montreal locking
   community. He travels worldwide to help spread locking and continues
   to develop new outlets and teaching formats for developing lockers.`,
+  p3: 'In addition to his performance career, Scramble is a street dance archivist and historian, specializing in the preservation and documentation of dance through video and oral histories. He has co-curated three major street dance exhibits with the Montreal Loves Hip Hop collective, including one in collaboration with the City of Montreal and two presented at Place des Arts as part of the Jack Of All Trades (JOAT) Festival.',
 }
 
 export const TEACHINGS = [
