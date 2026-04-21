@@ -1,35 +1,55 @@
+import { getAllPosts } from '../lib/blog'
+
 function generateSiteMap() {
   const baseUrl = 'https://scramblelock.com' // Replace with your actual domain
+  const posts = getAllPosts()
+  const now = new Date().toISOString()
 
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
        <loc>${baseUrl}</loc>
-       <lastmod>${new Date().toISOString()}</lastmod>
+       <lastmod>${now}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>1.0</priority>
      </url>
      <url>
        <loc>${baseUrl}/about</loc>
-       <lastmod>${new Date().toISOString()}</lastmod>
+       <lastmod>${now}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.8</priority>
      </url>
      <url>
+       <loc>${baseUrl}/blog</loc>
+       <lastmod>${now}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     ${posts
+       .map(
+         post => `<url>
+       <loc>${baseUrl}/blog/${post.slug}</loc>
+       <lastmod>${post.date ? new Date(post.date).toISOString() : now}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>`
+       )
+       .join('')}
+     <url>
        <loc>${baseUrl}/media/photos</loc>
-       <lastmod>${new Date().toISOString()}</lastmod>
+       <lastmod>${now}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
      </url>
      <url>
        <loc>${baseUrl}/media/videos</loc>
-       <lastmod>${new Date().toISOString()}</lastmod>
+       <lastmod>${now}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
      </url>
      <url>
        <loc>${baseUrl}/contact</loc>
-       <lastmod>${new Date().toISOString()}</lastmod>
+       <lastmod>${now}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>

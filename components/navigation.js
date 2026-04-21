@@ -111,6 +111,7 @@ const Navigation = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
   const [clientWindowHeight, setClientWindowHeight] = useState(0)
   const [backgroundTransparacy, setBackgroundTransparacy] = useState(0)
+  const isBlogRoute = router.pathname === '/blog' || router.pathname.startsWith('/blog/')
 
   const handleHamburgerClick = useCallback(() => {
     setHamburgerOpen(prev => !prev)
@@ -138,9 +139,10 @@ const Navigation = () => {
   }, [handleScroll])
 
   useEffect(() => {
-    const backgroundTransparacyVar = Math.min(clientWindowHeight / 3000, 1)
+    const darkenDistance = isBlogRoute ? 500 : 3000
+    const backgroundTransparacyVar = Math.min(clientWindowHeight / darkenDistance, 1)
     setBackgroundTransparacy(backgroundTransparacyVar)
-  }, [clientWindowHeight])
+  }, [clientWindowHeight, isBlogRoute])
 
   return (
     <>
@@ -167,18 +169,23 @@ const Navigation = () => {
         </LogoLink>
         <NoBurgerNav>
           <NavItems>
-            {ROUTES.map((route, index) => (
+            {ROUTES.map(route => (
               <Item key={route.href}>
                 <StyledLink
                   href={route.href}
-                  className={router.pathname === route.href ? 'active' : ''}
+                  className={
+                    router.pathname === route.href ||
+                    (route.href !== '/' && router.pathname.startsWith(route.href))
+                      ? 'active'
+                      : ''
+                  }
                 >
                   {route.label}
                 </StyledLink>
               </Item>
             ))}
             <Item id={'social'}>
-              {SOCIAL_ROUTES.map((route, index) => (
+              {SOCIAL_ROUTES.map(route => (
                 <SocialIcon
                   target="_blank"
                   key={route.name}

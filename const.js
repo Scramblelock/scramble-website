@@ -10,6 +10,10 @@ export const ROUTES = [
     label: 'About',
   },
   {
+    href: '/blog',
+    label: 'Blog',
+  },
+  {
     href: '/media/photos',
     label: 'Photos',
   },
@@ -354,8 +358,9 @@ export const IMAGES = [
 ]
 
 export const VIDEOS = [
-  { url: 'https://youtu.be/1pXzTNzx3fg' },
+  { url: 'https://youtu.be/xsKmIK6U-3c' },
   { url: 'https://youtu.be/fkohmwbSRtc' },
+  { url: 'https://youtu.be/1pXzTNzx3fg' },
   { url: 'https://youtu.be/oILg8N67Eu8' },
   { url: 'https://youtu.be/KzPx9TAw0Dw' },
   { url: 'https://youtu.be/w2qbBFh1czk' },
@@ -368,7 +373,6 @@ export const VIDEOS = [
   { url: 'https://www.youtube.com/watch?v=xga90SY2KWE' },
   { url: 'https://youtu.be/G9PBSZellbc' },
   { url: 'https://www.youtube.com/watch?v=64YJaAqSxso' },
-  { url: 'https://www.youtube.com/watch?v=VT35LClC_Mo' },
   { url: 'https://youtu.be/EgIePGitfe4' },
   { url: 'https://www.youtube.com/watch?v=7wXznuqWsZQ' },
   { url: 'https://www.youtube.com/watch?v=F2P6uwSMjR8' },
