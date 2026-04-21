@@ -88,11 +88,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/blog/:path*',
-        destination: '/404',
-        permanent: true,
-      },
-      {
         source: '/news/:path*',
         destination: '/404',
         permanent: true,
