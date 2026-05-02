@@ -267,6 +267,9 @@ export const PERFORMANCES = [
 ]
 
 export const JUDGE_EVENTS = [
+  `Cornwall Funk Family's All Style Street Dance Battle 2026 - Cornwall, ON`,
+  `House of Paint Festival 2025 - Ottawa, ON`,
+  `Groove Line Campbellocking Battle 2025 - Montreal, Canada`,
   `Calgary Hip Hop & Street Dance Festival 2024 - Calgary, Canada`,
   `Seminario Locking 2024 - Lima, Peru`,
   `Coolfunk Locking Battle 2023 - Toronto, Canada`,
@@ -295,10 +298,27 @@ export const JUDGE_EVENTS = [
 ]
 
 export const BATTLE_GUEST_EVENTS = [
+  `Juste Debout World Finals 2019 – Paris, France`,
+  `Super Strong Style 2019 – Tokyo, Japan`,
   `Lock City 2014 – Kaohsiung, Taiwan`,
   `Locking Up 2011 – Moscow,
   Russia`,
   `Eurobattle 2010 – Porto, Portugal`,
+  `Juste Debout World Finals 2010 – Paris, France`,
+  `UK Bboy Championships 2007 – London, UK`,
+]
+
+export const GUEST_LECTURE_EVENTS = [
+  `Concordia University – 2019 – Montreal, Canada`,
+  `McGill University – 2016 – Montreal, Canada`,
+  `University of East London – 2010 – London, UK`,
+  `Pearson Adult Career Centre – 2012 – Montreal, Canada`,
+]
+
+export const WORKS_PUBLISHED = [
+  `The Art of Looking Fresh - Self-published eBook - 2026`,
+  `The Oxford Handbook of Hip Hop Dance Studies - Oxford University Press - 2022`,
+  `Don Campbellock - The Story Behind The Man Who Created Locking - Bybase Magazine - 2018`,
 ]
 
 export const OTHERS = [`Red Bull Beat Riders 2006 – Invited student – New York, USA`]

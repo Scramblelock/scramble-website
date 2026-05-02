@@ -10,6 +10,8 @@ import {
   PERFORMANCES,
   JUDGE_EVENTS,
   BATTLE_GUEST_EVENTS,
+  GUEST_LECTURE_EVENTS,
+  WORKS_PUBLISHED,
   OTHERS,
 } from '../const'
 
@@ -178,7 +180,7 @@ const ListItem = styled.li`
   line-height: 30px;
 
   @media ${media.MOBILE} {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 20px;
   }
 `
@@ -187,7 +189,7 @@ const PlacementText = styled.p`
   font-style: italic;
 
   @media ${media.MOBILE} {
-    font-size: 10px;
+    font-size: 12px;
   }
 `
 
@@ -275,14 +277,14 @@ function About() {
                 )
               })}
             </UnorderedList>
-          </LeftColumn>
-          <RightColumn>
             <UnorderedList>
               <ResumeSubHeader>Events Organized</ResumeSubHeader>
               {EVENTS.map((event, index) => (
                 <ListItem key={`event-${index}`}>{event}</ListItem>
               ))}
             </UnorderedList>
+          </LeftColumn>
+          <RightColumn>
             <UnorderedList>
               <ResumeSubHeader>Performances</ResumeSubHeader>
               {PERFORMANCES.map((performance, index) => (
@@ -299,6 +301,18 @@ function About() {
               <ResumeSubHeader>Battle Guest</ResumeSubHeader>
               {BATTLE_GUEST_EVENTS.map((event, index) => (
                 <ListItem key={`battle-${index}`}>{event}</ListItem>
+              ))}
+            </UnorderedList>
+            <UnorderedList>
+              <ResumeSubHeader>Guest Lectures</ResumeSubHeader>
+              {GUEST_LECTURE_EVENTS.map((event, index) => (
+                <ListItem key={`lecture-${index}`}>{event}</ListItem>
+              ))}
+            </UnorderedList>
+            <UnorderedList>
+              <ResumeSubHeader>Works Published</ResumeSubHeader>
+              {WORKS_PUBLISHED.map((work, index) => (
+                <ListItem key={`work-${index}`}>{work}</ListItem>
               ))}
             </UnorderedList>
             <UnorderedList>
