@@ -73,7 +73,7 @@ export const PRIMARY_SOCIAL_ICONS = [
   },
   {
     name: 'Gmail',
-    url: 'mailto:scramblelock@.com',
+    url: 'mailto:scramblelock@gmail.com',
     logo: '/gmail-black.png',
   },
 ]
