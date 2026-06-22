@@ -1,4 +1,12 @@
 export const EMAIL = 'scramblelock@gmail.com'
+export const DESCRIPTION =
+  'Learn about Marc "Scramblelock" Sakalauskas, a Campbellocking (aka Locking) dance artist, educator, archivist, and historian based in Montreal.'
+export const BLOG_DESCRIPTION = 'Writing, research, and reflections from Scramblelock.'
+export const MAIN_DESCRIPTION =
+  'Artist and educator specializing in Campbellocking (aka Locking) dance'
+export const SITE_URL = 'https://scramblelock.com'
+export const SITE_NAME = 'Scramblelock'
+export const PERSON_NAME = 'Marc "Scramblelock" Sakalauskas'
 
 export const ROUTES = [
   {

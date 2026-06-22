@@ -6,6 +6,14 @@ import { getPostBySlug, getPostSlugs } from '../../lib/blog'
 import BlogSubscribe from '../../components/blogSubscribe'
 import { media } from '../../media'
 import { color } from '../../color'
+import {
+  JsonLd,
+  blogPostingSchema,
+  personSchema,
+  schemaGraph,
+  webpageSchema,
+  websiteSchema,
+} from '../../lib/schema'
 
 const PostContainer = styled.main`
   min-height: 100vh;
@@ -167,6 +175,18 @@ export default function BlogPost({ post }) {
         <title>{`${post.title} - Scramblelock`}</title>
         {post.excerpt && <meta name="description" content={post.excerpt} />}
       </Head>
+      <JsonLd
+        schema={schemaGraph([
+          websiteSchema(),
+          personSchema(),
+          webpageSchema({
+            path: `/blog/${post.slug}`,
+            title: `${post.title} - Scramblelock`,
+            description: post.excerpt,
+          }),
+          blogPostingSchema(post),
+        ])}
+      />
       <PostContainer>
         <Article>
           <BackLink href="/blog">Back to blog</BackLink>
