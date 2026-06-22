@@ -6,6 +6,15 @@ import { getAllPosts } from '../../lib/blog'
 import BlogSubscribe from '../../components/blogSubscribe'
 import { media } from '../../media'
 import { color } from '../../color'
+import {
+  JsonLd,
+  blogSchema,
+  personSchema,
+  schemaGraph,
+  webpageSchema,
+  websiteSchema,
+} from '../../lib/schema'
+import { BLOG_DESCRIPTION } from '../../const'
 
 const BlogContainer = styled.main`
   min-height: 100vh;
@@ -145,8 +154,21 @@ export default function Blog({ posts }) {
     <>
       <Head>
         <title>Blog - Scramblelock</title>
-        <meta name="description" content="Writing, research, and reflections from Scramblelock." />
+        <meta name="description" content={BLOG_DESCRIPTION} />
       </Head>
+      <JsonLd
+        schema={schemaGraph([
+          websiteSchema(),
+          personSchema(),
+          webpageSchema({
+            path: '/blog',
+            title: 'Blog - Scramblelock',
+            description: BLOG_DESCRIPTION,
+            type: 'CollectionPage',
+          }),
+          blogSchema(posts),
+        ])}
+      />
       <BlogContainer>
         <Header>
           <Title>BLOG</Title>

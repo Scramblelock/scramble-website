@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { memo } from 'react'
 import { color } from '../color'
 import { media } from '../media'
+import { MAIN_DESCRIPTION } from '../const'
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -166,7 +167,7 @@ function HomePage() {
             sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 600px"
           />
           <TextBox>
-            <Text>Artist and educator specializing in Campbellocking (aka Locking) dance</Text>
+            <Text>{MAIN_DESCRIPTION}</Text>
           </TextBox>
           <Button href="/about">Learn more</Button>
         </TextContainer>

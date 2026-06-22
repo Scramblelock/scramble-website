@@ -1,7 +1,9 @@
+import Head from 'next/head'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { memo } from 'react'
 import { media } from '../media'
+import { JsonLd, personSchema, schemaGraph, webpageSchema } from '../lib/schema'
 import {
   BIO,
   TEACHINGS,
@@ -13,6 +15,7 @@ import {
   GUEST_LECTURE_EVENTS,
   WORKS_PUBLISHED,
   OTHERS,
+  DESCRIPTION,
 } from '../const'
 
 const AboutContainer = styled.div`
@@ -196,6 +199,20 @@ const PlacementText = styled.p`
 function About() {
   return (
     <>
+      <Head>
+        <title>About - Scramblelock</title>
+        <meta name="description" content={DESCRIPTION} />
+      </Head>
+      <JsonLd
+        schema={schemaGraph([
+          personSchema(),
+          webpageSchema({
+            path: '/about',
+            title: 'About - Scramblelock',
+            description: DESCRIPTION,
+          }),
+        ])}
+      />
       <AboutContainer>
         <BackgroundImage
           src="/about.jpg"
