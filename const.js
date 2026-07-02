@@ -279,7 +279,7 @@ export const WORKS_PUBLISHED = [
   `Don Campbellock - The Story Behind The Man Who Created Locking - Bybase Magazine - 2018`,
 ]
 
-export const OTHERS = [`Red Bull Beat Riders 2006 - Invited student - New York, USA`]
+export const OTHERS = [`Red Bull Beat Riders 2006 - Invited student - New York, NY, USA`]
 
 export const IMAGES = [
   {
