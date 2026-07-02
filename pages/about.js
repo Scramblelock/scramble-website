@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { memo } from 'react'
 import { media } from '../media'
-import { JsonLd, personSchema, schemaGraph, webpageSchema } from '../lib/schema'
+import { JsonLd, personSchema, profilePageSchema, schemaGraph } from '../lib/schema'
 import {
   BIO,
   TEACHINGS,
@@ -206,7 +206,7 @@ function About() {
       <JsonLd
         schema={schemaGraph([
           personSchema(),
-          webpageSchema({
+          profilePageSchema({
             path: '/about',
             title: 'About - Scramblelock',
             description: DESCRIPTION,
