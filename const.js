@@ -124,23 +124,16 @@ export const BIO = {
 }
 
 export const TEACHINGS = [
-  `Urban Element – Weekly Locking - 2022-2026 – Montreal,
-  Canada`,
-  `Studio Imperium - 2016-2025 - Montreal, Canada`,
-  `Ecole National de Danse Du Canada - 2022-2023 - Montreal, Canada`,
-  `Krossline - Weekly Locking - 2022 - Montreal, Canada`,
-  `Equilibrium – Weekly Locking – 2018-2020 –
-  Montreal, Canada`,
-  `Break City – Weekly Locking – 2018 –
-  Montreal, Canada`,
-  `Place Cartier – Hip Hop History –
-  2011-2018 – Montreal, Canada`,
-  `Studio MP – Weekly Locking –
-  2013-2015 – Montreal, Canada`,
-  `Pearson Adult Career Centre – Hip Hop
-  History – 2012 – Montreal, Canada`,
-  `Blueprint For Life
-  2009-2012 – Instructor – Northwest Territories & Nunavik, Canada`,
+  `Urban Element – Weekly Locking - 2022-2026 – Montreal, QC, Canada`,
+  `Studio Imperium - 2016-2025 - Montreal, QC, Canada`,
+  `Ecole National de Danse Du Canada - 2022-2023 - Montreal, QC, Canada`,
+  `Krossline - Weekly Locking - 2022 - Montreal, QC, Canada`,
+  `Equilibrium – Weekly Locking – 2018-2020 – Montreal, QC, Canada`,
+  `Break City – Weekly Locking – 2018 – Montreal, QC, Canada`,
+  `Place Cartier – Hip Hop History – 2011-2018 – Montreal, QC, Canada`,
+  `Studio MP – Weekly Locking – 2013-2015 – Montreal, QC, Canada`,
+  `Pearson Adult Career Centre – Hip Hop History – 2012 – Montreal, QC, Canada`,
+  `Blueprint For Life 2009-2012 – Instructor – Northwest Territories & Nunavik, Canada`,
   `University of East London – Guest lecturer – 2010 – London, UK`,
 ]
 
@@ -148,78 +141,55 @@ export const CONTESTS = [
   {
     placement: '1st Place',
     description: [
-      `Back To The Funk 2026 (Campbellocking) - Boston, USA`,
-      `Astrofunk 2026 (Campbellocking) - Toronto, Canada`,
+      `Back To The Funk 2026 (Campbellocking) - Boston, MA, USA`,
+      `Astrofunk 2026 (Campbellocking) - Toronto, ON, Canada`,
       `Stop & Lock 2025 (Campbellocking) - Monterrey, Mexico`,
       `Super Strong Style 2019 (Locking) - Tokyo, Japan`,
-      `Juste Debout USA 2019 (Locking) – Washington DC,
-              USA`,
-      `Crystallized 2018 (Locking) – Toronto, Canada`,
-      `Crystallized
-              2017 (Locking) – Toronto, Canada`,
-      `On Point 2017 (Locking) –
-              Montreal, Canada`,
-      `On Point 2015 (Locking) – Montreal, Canada`,
-      `Step
-              Ya Game Up 2014 (Locking) – New York City, USA`,
-      `Bust-A-Move 2013
-              (Locking) – Montreal, Canada`,
-      `TNL: 7 to Smoke 2013 (Locking) –
-              Seoul, Korea`,
+      `Juste Debout USA 2019 (Locking) – Washington DC, USA`,
+      `Crystallized 2018 (Locking) – Toronto, ON, Canada`,
+      `Crystallized 2017 (Locking) – Toronto, ON, Canada`,
+      `On Point 2017 (Locking) – Montreal, QC, Canada`,
+      `On Point 2015 (Locking) – Montreal, QC, Canada`,
+      `Step Ya Game Up 2014 (Locking) – New York, NY, USA`,
+      `Bust-A-Move 2013 (Locking) – Montreal, QC, Canada`,
+      `TNL: 7 to Smoke 2013 (Locking) – Seoul, Korea`,
       `G-1 2012 (Locking) – Tokyo, Japan`,
-      `Bust-A-Move 2012
-              (Locking) – Montreal, Canada`,
-      `Funk Fo Yo Feet 2011 (Locking) –
-              Toronto, Canada`,
+      `Bust-A-Move 2012 (Locking) – Montreal, QC, Canada`,
+      `Funk Fo Yo Feet 2011 (Locking) – Toronto, ON, Canada`,
       `Battle of the Year 2009 (Locking) – Germany`,
-      `What
-              Da Funk 2009 (Locking) – Toronto, Canada`,
-      `Bust-A-Move 2009
-              (Locking) – Montreal, Canada`,
-      `Bust-A-Move 2008 (Locking) –
-              Montreal, Canada`,
-      `Freestyle Session 2007 (Locking) – Los Angeles,
-              USA`,
-      `Bboy Summit 2006 (Locking) – Los Angeles, USA`,
-      `Bust-A-Move 2006
-              (Locking) – Montreal, Canada`,
-      `Ill Abilities: No Limits 2008 (B-boy)
-              – Montreal, Canada`,
-      `Bag of Trix: 7 series 2006 (B-boy) – Toronto,
-              Canada`,
+      `What Da Funk 2009 (Locking) – Toronto, ON, Canada`,
+      `Bust-A-Move 2009 (Locking) – Montreal, QC, Canada`,
+      `Bust-A-Move 2008 (Locking) – Montreal, QC, Canada`,
+      `Freestyle Session 2007 (Locking) – Los Angeles, CA, USA`,
+      `Bboy Summit 2006 (Locking) – Los Angeles, CA, USA`,
+      `Bust-A-Move 2006 (Locking) – Montreal, QC, Canada`,
+      `Ill Abilities: No Limits 2008 (B-boy) – Montreal, QC, Canada`,
+      `Bag of Trix: 7 series 2006 (B-boy) – Toronto, ON, Canada`,
     ],
   },
   {
     placement: '2nd Place',
     description: [
-      `Vancouver Street Dance Festival 2024 (Locking) - Vancouver, Canada`,
-      `Vancouver Street Dance Festival 2023 (Locking) - Vancouver, Canada`,
-      `100LUX Creative Boost 2022 (Locking) - Montreal, Canada`,
-      `Juste Debout USA 2013 (Locking) – New York City,
-              USA`,
+      `Vancouver Street Dance Festival 2024 (Locking) - Vancouver, BC, Canada`,
+      `Vancouver Street Dance Festival 2023 (Locking) - Vancouver, BC, Canada`,
+      `100LUX Creative Boost 2022 (Locking) - Montreal, QC, Canada`,
+      `Juste Debout USA 2013 (Locking) – New York, NY, USA`,
       `Locking Up 2011 (Locking) – Moscow, Russia`,
-      `How Tha West Was
-              Won 2008 (Locking) – Los Angeles, USA`,
+      `How Tha West Was Won 2008 (Locking) – Los Angeles, CA, USA`,
     ],
   },
   {
     placement: '3rd Place',
-    description: [
-      `Just For Laughs
-              East Coast Eliminations 2007 (B-boy) – Montreal, Canada`,
-    ],
+    description: [`Just For Laughs East Coast Eliminations 2007 (B-boy) – Montreal, QC, Canada`],
   },
   {
     placement: 'Semi Finalist',
     description: [
-      `Crystallized 2025 (Locking) – Toronto, Canada`,
+      `Crystallized 2025 (Locking) – Toronto, ON, Canada`,
       `Juste Debout 2019 (Locking) – Paris, France`,
-      `Lock Is Not A
-              Joke 2015 (Locking) – St. Pardoux d’Arnet, France`,
-      `Lock City 2014
-              (Locking) – Kaohsiung, Taiwan`,
-      `Juste Debout Canada 2012 (Locking) –
-              Montreal, Canada`,
+      `Lock Is Not A Joke 2015 (Locking) – St. Pardoux d’Arnet, France`,
+      `Lock City 2014 (Locking) – Kaohsiung, Taiwan`,
+      `Juste Debout Canada 2012 (Locking) – Montreal, QC, Canada`,
       `Juste Debout 2010 (Locking) – Paris, France`,
       `UK Bboy Championships 2007 (Locking) – London, UK`,
     ],
@@ -227,100 +197,80 @@ export const CONTESTS = [
 ]
 
 export const EVENTS = [
-  `Montreal Loves Hip Hop Exhibit 2022-2024 - Montreal, Canada`,
-  `Lockflix & Chill 2023 - Montreal, Canada`,
-  `Unlock The Funk 2017-2019 – Montreal, Canada`,
-  `Locking 4 Life in
-  Canada Tour 2014, 2009 & 2008 – Montreal, Toronto, Ottawa, Quebec
-  City`,
-  `Family Affair: Locking & Waacking Battle 2024, 2013 & 2008 –
-  Montreal, Canada`,
-  `The Hippest Trip: Soul Train Tribute Party 2012 &
-  2011 – Montreal, Canada`,
-  `Real City Cyphurs: Bboy Battle 2010 –
-  Montreal, Canada`,
-  `Under Pressure Dance Battles 2009 – Montreal,
-  Canada`,
-  `Steel City Cyphurs: Bboy Battle 2005-2009 – Hamilton,
-  Canada`,
+  `Montreal Loves Hip Hop Exhibit 2022-2024 - Montreal, QC, Canada`,
+  `Lockflix & Chill 2023 - Montreal, QC, Canada`,
+  `Unlock The Funk 2017-2019 – Montreal, QC, Canada`,
+  `Locking 4 Life in Canada Tour 2014, 2009 & 2008 – Montreal, Toronto, Ottawa, Quebec City`,
+  `Family Affair: Locking & Waacking Battle 2024, 2013 & 2008 – Montreal, QC, Canada`,
+  `The Hippest Trip: Soul Train Tribute Party 2012 & 2011 – Montreal, QC, Canada`,
+  `Real City Cyphurs: Bboy Battle 2010 – Montreal, QC, Canada`,
+  `Under Pressure Dance Battles 2009 – Montreal, QC, Canada`,
+  `Steel City Cyphurs: Bboy Battle 2005-2009 – Hamilton, ON, Canada`,
 ]
 
 export const PERFORMANCES = [
-  `Tempeo Festival 2024 - Montreal, Canada`,
-  `JOAT International Streetdance Festival 2024 - Montreal, Canada`,
-  `Imperium Showcase 2023 - Montreal, Canada`,
+  `Tempeo Festival 2024 - Montreal, QC, Canada`,
+  `JOAT International Streetdance Festival 2024 - Montreal, QC, Canada`,
+  `Imperium Showcase 2023 - Montreal, QC, Canada`,
   `Public Kitchen 2022 - Boston, MA, USA`,
-  `Montreal Swing Riot 2014-2019 - Montreal, Canada`,
-  `Hit The Floor 2018 – Gatineau, Canada`,
-  `Breakin Convention 2017 –
-  Toronto, Canada`,
-  `100Lux 2017 – Montreal, Canada`,
-  `Las Vegas Locking
-  Camp 2016 – Las Vegas, NV, USA`,
-  `Cirque Du Soliel Headquarters 2014
-  – Montreal, Canada`,
-  `Festival Mode & Design 2014 – Montreal, Canada`,
-  `Bust A Move 2014 – Montreal, Canada`,
-  `Soul Street Vol 62 2012 –
-  Tokyo, Japan`,
-  `Talib Kweli concert (Opening act with Illmatic
-  Styles) 2008 – Montreal, Canada`,
-  `Adidas Montreal Fashion Show 2007,
-  2008 – Montreal Canada`,
-  `OC Streetstyle show at How Tha West Was Won
-  2008 – Los Angeles, USA`,
-  `Bustin Out Theatre Show 2005 – Toronto,
-  Canada`,
-  `Toronto Street Festival 2004 – Toronto, Canada`,
+  `Montreal Swing Riot 2014-2019 - Montreal, QC, Canada`,
+  `Hit The Floor 2018 – Gatineau, QC, Canada`,
+  `Breakin Convention 2017 – Toronto, ON, Canada`,
+  `100Lux 2017 – Montreal, QC, Canada`,
+  `Las Vegas Locking Camp 2016 – Las Vegas, NV, USA`,
+  `Cirque Du Soliel Headquarters 2014 – Montreal, QC, Canada`,
+  `Festival Mode & Design 2014 – Montreal, QC, Canada`,
+  `Bust A Move 2014 – Montreal, QC, Canada`,
+  `Soul Street Vol 62 2012 – Tokyo, Japan`,
+  `Talib Kweli concert (Opening act with Illmatic Styles) 2008 – Montreal, QC, Canada`,
+  `Adidas Montreal Fashion Show 2007, 2008 – Montreal, QC, Canada`,
+  `OC Streetstyle show at How Tha West Was Won 2008 – Los Angeles, CA, USA`,
+  `Bustin Out Theatre Show 2005 – Toronto, ON, Canada`,
+  `Toronto Street Festival 2004 – Toronto, ON, Canada`,
 ]
 
 export const JUDGE_EVENTS = [
-  `Cornwall Funk Family's All Style Street Dance Battle 2026 - Cornwall, ON`,
-  `House of Paint Festival 2025 - Ottawa, ON`,
-  `Groove Line Campbellocking Battle 2025 - Montreal, Canada`,
-  `Calgary Hip Hop & Street Dance Festival 2024 - Calgary, Canada`,
+  `Creative Boost Campbellocking Battle 2026 - Montreal, QC, Canada`,
+  `Cornwall Funk Family's All Style Street Dance Battle 2026 - Cornwall, ON, Canada`,
+  `House of Paint Festival 2025 - Ottawa, ON, Canada`,
+  `Groove Line Campbellocking Battle 2025 - Montreal, QC, Canada`,
+  `Calgary Hip Hop & Street Dance Festival 2024 - Calgary, AB, Canada`,
   `Seminario Locking 2024 - Lima, Peru`,
-  `Coolfunk Locking Battle 2023 - Toronto, Canada`,
+  `Coolfunk Locking Battle 2023 - Toronto, ON, Canada`,
   `Vancouver Street Dance Festival 2020 - Online`,
   `Next Urban Legend 2019 - Paris, France`,
   `Hip Hop Summit Cyprus 2019 - Limassol, Cyprus`,
   `Bashville Stampede 2018 – Nashville, TN, USA`,
-  `357 Locking Session
-  2017 – Moscow, Russia`,
+  `357 Locking Session 2017 – Moscow, Russia`,
   `Lock City World Finals 2015 – Singapore`,
-  `Lock
-  City Hong Kong 2015 – Hong Kong`,
+  `Lock City Hong Kong 2015 – Hong Kong`,
   `Strong Style 2015 – Tokyo, Japan`,
   `Strong Style 2012 – Tokyo, Japan`,
-  `UDO Canadian Streetdance
-  Championships 2012 & 2013 – Toronto, Canada`,
-  `Ground FX 2012 –
-  Waterloo, Canada`,
+  `UDO Canadian Streetdance Championships 2012 & 2013 – Toronto, ON, Canada`,
+  `Ground FX 2012 – Waterloo, ON, Canada`,
   `Urban Funkstyle Session 2010 – Budapest, Hungary`,
   `Baltic Session 2010 – Tallinn, Estonia`,
-  `Just For Laughs 2010 –
-  Montreal, Canada`,
-  `Irish Hip Hop Chamipionships 2009 – Dublin,
-  Ireland`,
-  `Funk Fo Yo Feet 2009 – Toronto Canada`,
+  `Just For Laughs 2010 – Montreal, QC, Canada`,
+  `Irish Hip Hop Chamipionships 2009 – Dublin, Ireland`,
+  `Funk Fo Yo Feet 2009 – Toronto, ON, Canada`,
 ]
 
 export const BATTLE_GUEST_EVENTS = [
   `Juste Debout World Finals 2019 – Paris, France`,
   `Super Strong Style 2019 – Tokyo, Japan`,
   `Lock City 2014 – Kaohsiung, Taiwan`,
-  `Locking Up 2011 – Moscow,
-  Russia`,
+  `Locking Up 2011 – Moscow, Russia`,
   `Eurobattle 2010 – Porto, Portugal`,
   `Juste Debout World Finals 2010 – Paris, France`,
   `UK Bboy Championships 2007 – London, UK`,
 ]
 
 export const GUEST_LECTURE_EVENTS = [
-  `Concordia University – 2019 – Montreal, Canada`,
+  `Réseau d'enseignement de la danse (RED) Le Stage - 2026 - Victoriaville, QC, Canada`,
+  `Concordia University – 2019 – Montreal, QC, Canada`,
   `McGill University – 2016 – Montreal, Canada`,
   `University of East London – 2010 – London, UK`,
-  `Pearson Adult Career Centre – 2012 – Montreal, Canada`,
+  `Pearson Adult Career Centre – 2012 – Montreal, QC, Canada`,
 ]
 
 export const WORKS_PUBLISHED = [
