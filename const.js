@@ -197,6 +197,7 @@ export const CONTESTS = [
 ]
 
 export const EVENTS = [
+  `Keep The Fire Burning 2026 - Montreal, QC, Canada`,
   `Montreal Loves Hip Hop Exhibit 2022-2024 - Montreal, QC, Canada`,
   `Lockflix & Chill 2023 - Montreal, QC, Canada`,
   `Unlock The Funk 2017-2019 - Montreal, QC, Canada`,
