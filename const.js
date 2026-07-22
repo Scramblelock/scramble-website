@@ -141,6 +141,7 @@ export const CONTESTS = [
   {
     placement: '1st Place',
     description: [
+      `Step Ya Game Up 2026 (Campbellocking) - New York, NY, USA`,
       `Back To The Funk 2026 (Campbellocking) - Boston, MA, USA`,
       `Astrofunk 2026 (Campbellocking) - Toronto, ON, Canada`,
       `Stop & Lock 2025 (Campbellocking) - Monterrey, Mexico`,
